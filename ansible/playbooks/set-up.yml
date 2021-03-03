@@ -1,0 +1,14 @@
+---
+
+- name: Installing requeriments to run load testing stack
+  hosts: localhost
+  tasks:
+
+    - name: Install K6
+      homebrew:
+        name: k6
+        update_homebrew: yes
+
+    - name: Install docker and docker compose
+      pip:
+        name: ['docker', 'docker-compose']
